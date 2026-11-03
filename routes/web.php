@@ -21,3 +21,11 @@ Route::post('/importer-dossier', [ImportDossierController::class, 'store'])
 
 Route::get('/dossiers', [DossierController::class, 'index'])
     ->name('dossiers.index');
+
+Route::get('/dossiers/{dossier}', [DossierController::class, 'show'])
+    ->name('dossiers.show');
+
+Route::post('/dossiers/{dossier}/documents', [
+    DossierController::class,
+    'storeDocuments',
+])->name('dossiers.documents.store');

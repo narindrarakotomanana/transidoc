@@ -21,6 +21,7 @@ import {
     ClearOutlined,
     FolderOpenOutlined,
     InfoCircleOutlined,
+    PlusOutlined,
 } from '@ant-design/icons';
 
 import AuthenticatedLayout from '../../Layouts/AuthenticatedLayout';
@@ -213,14 +214,33 @@ export default function Index({ dossiers, filters = {} }) {
                 style={{ width: '100%' }}
             >
                 {/* En-tête de la page */}
-                <div>
-                    <Title level={4} style={{ margin: 0 }}>
-                        Dossiers
-                    </Title>
+                <div
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        flexWrap: 'wrap',
+                        gap: 16,
+                    }}
+                >
+                    <div>
+                        <Title level={4} style={{ margin: 0 }}>
+                            Dossiers
+                        </Title>
 
-                    <Text type="secondary">
-                        Retrouvez et consultez vos dossiers.
-                    </Text>
+                        <Text type="secondary">
+                            Retrouvez et consultez vos dossiers.
+                        </Text>
+                    </div>
+
+                    <Button
+                        type="primary"
+                        size="large"
+                        icon={<PlusOutlined />}
+                        onClick={() => router.visit('/importer-dossier')}
+                    >
+                        Importer un dossier
+                    </Button>
                 </div>
 
                 {/* Recherche et filtres */}
